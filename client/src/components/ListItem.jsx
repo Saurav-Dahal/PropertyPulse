@@ -8,7 +8,7 @@ const ListItem = ({categoryType, id, onDelete}) =>{
     return (
         <>
           <li className="categoryListing">
-            <Link to={`/category/${categoryType}`} className='categoryListingLink'>
+            <Link to={`/category/${categoryType}/${id}`} className='categoryListingLink'>
             <img src={rentIcon} alt="" className="categoryListingImg" />
             <div className="categoryListingDetails">
                 <p className="categoryListingLocattion">

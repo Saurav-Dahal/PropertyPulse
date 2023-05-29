@@ -16,6 +16,8 @@ connect();
 
 app.use('/api/users', require('./routes/userRoutes'));
 
+app.use('/api/listing', require('./routes/listingRoutes'));
+
   
 const hostname = '127.0.0.1';
 const port = 3003;

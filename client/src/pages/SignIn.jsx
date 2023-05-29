@@ -12,7 +12,7 @@ const SignIn = () => {
   })
   const { email, password } = formData;
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const onChange = (e) => {
     setFormData((prevState) => ({
@@ -23,13 +23,22 @@ const SignIn = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    try{
+      const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      };
 
-    try {
-      
+      await fetch('http://127.0.0.1:3003/api/users/signin', requestOptions).then((res) =>{
+        if(res){
+          toast.success('User signedin successfully.');
+          navigate('/');
+        }
+      });
 
-    } catch (error) {
-      
+    }catch(error){
+      toast.error(error);
     }
   }
 

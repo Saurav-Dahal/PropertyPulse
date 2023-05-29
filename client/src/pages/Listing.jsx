@@ -3,7 +3,7 @@ import Spinner from '../components/Spinner';
 import ListItem from "../components/ListItem";
 
 
-const Category =()=>{
+const Listing =()=>{
 
     return (
         <>
@@ -14,7 +14,7 @@ const Category =()=>{
             </header>
             <main>
                 <ul className="categoryListings">
-                    <ListItem categoryType={useParams().categoryName} />
+                    <ListItem categoryType={useParams().categoryName} id='1' />
                 </ul>
             </main>
             
@@ -23,4 +23,4 @@ const Category =()=>{
     )
 }
 
-export default Category
+export default Listing

@@ -2,8 +2,8 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useFormik} from 'formik'
-import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import { ReactComponent as ArrowRightIcon } from '../assets/svg/keyboardArrowRightIcon.svg'
 import visibilityIcon from '../assets/svg/visibilityIcon.svg'
 import BasicSchema from '../schema/schema'
@@ -30,11 +30,8 @@ const SignUp = () => {
           body: JSON.stringify(values),
         };
 
-        await fetch('http://127.0.0.1:3003/api/users/signup', requestOptions).then((res)=>{
-          // return res.json();
-          // console.log(res.json());
+        await fetch('http://127.0.0.1:3003/api/users/signup', requestOptions).then((res) =>{
           if(res){
-            // navigate('/signin');
             toast.success('User created successfully. Please signin to continue.');
             navigate('/signin');
           }
@@ -44,7 +41,7 @@ const SignUp = () => {
         toast.error('Something went wrong with registration. Please try again.')
       }
     }else{
-       console.log('Error');
+       toast.error('Please check the form and submit once again.');
     }
 
     console.log('submitted');
@@ -146,7 +143,6 @@ console.log(errors);
               Sign In Instead
             </Link> 
         </div>
-        <ToastContainer />
       </>
     ); 
 

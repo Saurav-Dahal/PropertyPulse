@@ -15,12 +15,10 @@ const CreateListing = () =>{
         discountedPrice: 0,
         coverImage: {},
         images: {},
-        latitude: 0,
-        longitude: 0,
     });
 
     const {type,name, bedrooms, bathrooms, parking, furnished, address, 
-        offers, regularPrice, discountedPrice, images, latitude, longitude} = formData;
+        offers, regularPrice, discountedPrice, coverImage, images} = formData;
 
     const onMutate = (e) => {
         // let boolean = null;
